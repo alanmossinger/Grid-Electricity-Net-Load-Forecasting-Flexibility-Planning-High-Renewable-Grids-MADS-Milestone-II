@@ -1,0 +1,222 @@
+{
+  "data_source": "eia930+open-meteo",
+  "built_at": "2026-10-04T15:41:50+00:00",
+  "git_commit": null,
+  "rows": 315485,
+  "zones": [
+    "BPAT",
+    "CISO",
+    "ERCO",
+    "MISO",
+    "NYIS",
+    "SWPP"
+  ],
+  "start": "2019-01-01 00:00:00",
+  "end": "2024-12-31 23:00:00",
+  "columns": [
+    "apparent_temp",
+    "battery",
+    "cloud_cover",
+    "coal",
+    "demand",
+    "demand_forecast",
+    "dew_point",
+    "dhi",
+    "dni_horiz",
+    "gas",
+    "ghi",
+    "humidity",
+    "hydro",
+    "net_generation",
+    "net_load",
+    "nuclear",
+    "oil",
+    "other",
+    "precipitation",
+    "pressure",
+    "ramp",
+    "renewable_share",
+    "snow_depth",
+    "snowfall",
+    "solar",
+    "solar_battery",
+    "temp",
+    "timestamp",
+    "total_interchange",
+    "unknown_storage",
+    "wind",
+    "wind_gust",
+    "wind_speed",
+    "wind_speed_100m",
+    "zone"
+  ],
+  "seed": 42,
+  "target": "net_load",
+  "artefact": "panel.parquet",
+  "panel_sha256_16": "b4c0b7163de0cc81",
+  "citations": {
+    "eia930": "U.S. Energy Information Administration, Hourly Electric Grid Monitor (EIA-930). Public domain.",
+    "open_meteo": "Open-Meteo historical weather API (ERA5 reanalysis, ECMWF). CC-BY-4.0."
+  },
+  "temp_coverage": 1.0,
+  "cleaning": {
+    "duplicate_rows_dropped": 0,
+    "rows_after_regular_grid": 315648,
+    "implausible_values_nulled": {
+      "demand": 8,
+      "other": 2,
+      "net_generation": 1,
+      "wind": 1
+    },
+    "missing_before_interp": {
+      "demand": 145,
+      "demand_forecast": 265,
+      "net_generation": 153,
+      "total_interchange": 574,
+      "coal": 52761,
+      "gas": 217,
+      "nuclear": 195,
+      "oil": 157908,
+      "other": 8061,
+      "solar": 228,
+      "hydro": 8073,
+      "wind": 206,
+      "battery": 314311,
+      "unknown_storage": 314311,
+      "solar_battery": 314241
+    },
+    "interp_limit_hours": 3,
+    "interp_rule": "whole-run gate: a run of <= 3 NaN is filled, a longer run is not",
+    "interp_runs": {
+      "demand": {
+        "runs": 48,
+        "runs_repaired": 44,
+        "runs_left_whole": 4,
+        "hours_repaired": 49,
+        "hours_left_whole": 96
+      },
+      "demand_forecast": {
+        "runs": 10,
+        "runs_repaired": 0,
+        "runs_left_whole": 10,
+        "hours_repaired": 0,
+        "hours_left_whole": 265
+      },
+      "net_generation": {
+        "runs": 37,
+        "runs_repaired": 32,
+        "runs_left_whole": 5,
+        "hours_repaired": 33,
+        "hours_left_whole": 120
+      },
+      "total_interchange": {
+        "runs": 38,
+        "runs_repaired": 21,
+        "runs_left_whole": 17,
+        "hours_repaired": 23,
+        "hours_left_whole": 551
+      },
+      "coal": {
+        "runs": 50,
+        "runs_repaired": 41,
+        "runs_left_whole": 9,
+        "hours_repaired": 44,
+        "hours_left_whole": 52717
+      },
+      "gas": {
+        "runs": 49,
+        "runs_repaired": 40,
+        "runs_left_whole": 9,
+        "hours_repaired": 45,
+        "hours_left_whole": 172
+      },
+      "nuclear": {
+        "runs": 50,
+        "runs_repaired": 42,
+        "runs_left_whole": 8,
+        "hours_repaired": 46,
+        "hours_left_whole": 149
+      },
+      "oil": {
+        "runs": 42,
+        "runs_repaired": 33,
+        "runs_left_whole": 9,
+        "hours_repaired": 38,
+        "hours_left_whole": 157870
+      },
+      "other": {
+        "runs": 47,
+        "runs_repaired": 38,
+        "runs_left_whole": 9,
+        "hours_repaired": 43,
+        "hours_left_whole": 8018
+      },
+      "solar": {
+        "runs": 58,
+        "runs_repaired": 46,
+        "runs_left_whole": 12,
+        "hours_repaired": 56,
+        "hours_left_whole": 172
+      },
+      "hydro": {
+        "runs": 48,
+        "runs_repaired": 39,
+        "runs_left_whole": 9,
+        "hours_repaired": 44,
+        "hours_left_whole": 8029
+      },
+      "wind": {
+        "runs": 54,
+        "runs_repaired": 45,
+        "runs_left_whole": 9,
+        "hours_repaired": 53,
+        "hours_left_whole": 153
+      },
+      "battery": {
+        "runs": 6,
+        "runs_repaired": 0,
+        "runs_left_whole": 6,
+        "hours_repaired": 0,
+        "hours_left_whole": 314311
+      },
+      "unknown_storage": {
+        "runs": 6,
+        "runs_repaired": 0,
+        "runs_left_whole": 6,
+        "hours_repaired": 0,
+        "hours_left_whole": 314311
+      },
+      "solar_battery": {
+        "runs": 9,
+        "runs_repaired": 0,
+        "runs_left_whole": 9,
+        "hours_repaired": 0,
+        "hours_left_whole": 314241
+      }
+    },
+    "missing_after_interp": {
+      "demand": 96,
+      "demand_forecast": 265,
+      "net_generation": 120,
+      "total_interchange": 551,
+      "coal": 52717,
+      "gas": 172,
+      "nuclear": 149,
+      "oil": 157870,
+      "other": 8018,
+      "solar": 172,
+      "hydro": 8029,
+      "wind": 153,
+      "battery": 314311,
+      "unknown_storage": 314311,
+      "solar_battery": 314241
+    },
+    "negative_generation_clipped": {
+      "solar": 28066,
+      "wind": 452,
+      "hydro": 142,
+      "nuclear": 1443
+    },
+    "rows_dropped_missing_target": 163
+  }
+}

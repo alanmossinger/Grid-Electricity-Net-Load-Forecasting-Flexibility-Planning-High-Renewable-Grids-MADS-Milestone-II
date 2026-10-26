@@ -1,0 +1,92 @@
+{
+  "built_by": "notebook 06",
+  "model": "notebook 04 per-horizon champion, quantile loss substituted",
+  "champion_params": {
+    "lag__lags": [
+      24,
+      25,
+      26,
+      48,
+      168
+    ],
+    "lag__roll_windows": [
+      24
+    ],
+    "model__l2_regularization": 0.0,
+    "model__learning_rate": 0.04,
+    "model__max_depth": 8,
+    "model__max_iter": 1200,
+    "model__min_samples_leaf": 100,
+    "select__k": "all"
+  },
+  "panel_crc32": "fc61cea0",
+  "quantiles": [
+    0.05,
+    0.25,
+    0.5,
+    0.75,
+    0.95
+  ],
+  "levels": [
+    0.05,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    0.9,
+    0.95
+  ],
+  "primary_interval": "CQR additive, Mondrian by zone",
+  "calibration": {
+    "alpha": 0.1,
+    "calibration_fraction": 0.2,
+    "calibration_rows": 53634,
+    "split": "chronological \u2014 the last 20% of dev, never random",
+    "cqr_margin_mw": 619.1334954455306,
+    "cqr_scaled_margin": 0.12223344210473368,
+    "mondrian_by": "zone",
+    "mondrian_margins_mw": {
+      "__pooled__": 619.1334954455306,
+      "CISO": 395.48265377190364,
+      "ERCO": 1610.4313852028718,
+      "MISO": 1569.6548629812896,
+      "SWPP": 1269.7067027910707,
+      "NYIS": 239.26677760108578,
+      "BPAT": 130.57482942008664
+    },
+    "mondrian_min_cell_rows": 200,
+    "split_conformal_half_width_mw": 5297.243231412263,
+    "level_shifts_mw": {
+      "0.05": -869.018726935863,
+      "0.1": -636.3166201418153,
+      "0.25": -280.92636425367164,
+      "0.5": -14.828089550432196,
+      "0.75": 142.55434926915768,
+      "0.9": 305.42830049371605,
+      "0.95": 371.4150197803683
+    }
+  },
+  "achieved_coverage_90": {
+    "raw quantile GBM (full dev)": 0.8039916277299731,
+    "raw quantile GBM (fit block)": 0.782532400262162,
+    "split conformal": 0.8863612338527241,
+    "CQR additive": 0.8844373031142307,
+    "CQR scaled": 0.8877566121905326,
+    "per-level shifts": 0.8886022960316285,
+    "CQR additive, Mondrian by zone": 0.886614939005053,
+    "CQR scaled, Mondrian by zone": 0.8885388697435463,
+    "per-level shifts, Mondrian by zone": 0.888517727647519
+  },
+  "weather": {
+    "training_weather": "ERA5 reanalysis, 2019-2024",
+    "scoring_weather": "archived forecast runs at the matching lead (section 6.3b)",
+    "injected_noise_is_superseded": true
+  },
+  "files": {
+    "holdout_intervals.parquet": "per-row raw and calibrated quantiles, all bounds, actual; cal_*/cqr_* are Mondrian by zone, pooled_* the pooled arm",
+    "weather_widening_by_horizon.parquet": "width and coverage at noise scale 0 and 1",
+    "calibration_curve.parquet": "nominal vs empirical, before and after calibration",
+    "interval_methods.parquet": "coverage, width and Winkler for all nine arms",
+    "operational_weather_by_horizon.parquet": "MAE and p95 under reanalysis vs forecast"
+  }
+}

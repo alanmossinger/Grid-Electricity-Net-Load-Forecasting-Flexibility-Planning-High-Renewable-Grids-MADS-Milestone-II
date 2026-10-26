@@ -1,0 +1,28 @@
+{
+  "horizon": 24,
+  "cv_mae": 2107.344856458892,
+  "params": {
+    "lag__lags": [
+      24,
+      25,
+      26,
+      48,
+      168
+    ],
+    "lag__roll_windows": [
+      24
+    ],
+    "model__l2_regularization": 0.0,
+    "model__learning_rate": 0.04,
+    "model__max_depth": 8,
+    "model__max_iter": 1200,
+    "model__min_samples_leaf": 100,
+    "select__k": "all"
+  },
+  "n_iter_random": 40,
+  "boundary_hits": {
+    "model__max_iter": "high",
+    "model__min_samples_leaf": "high"
+  },
+  "escalation_rounds": 0
+}

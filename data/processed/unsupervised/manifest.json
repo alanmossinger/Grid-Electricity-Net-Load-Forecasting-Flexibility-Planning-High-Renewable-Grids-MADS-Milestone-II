@@ -1,0 +1,18 @@
+{
+  "built_by": "notebook 05",
+  "panel_source": "panel.parquet",
+  "panel_crc32": "fc61cea0",
+  "n_zone_days": 13069,
+  "algorithm": "kmeans",
+  "n_components": 5,
+  "param": 3.0,
+  "n_clusters": 3,
+  "files": {
+    "daily_shapes.parquet": "zone-day x 24 normalised hours; the clustering input",
+    "cluster_labels.parquet": "zone, date, cluster -- the fitted partition",
+    "clustering_grid.parquet": "every (n_components, algorithm, param) cell scored",
+    "cluster_feature_same_day.parquet": "LEAKED feature: today's own regime",
+    "cluster_feature_prev_day.parquet": "admissible feature: yesterday's regime"
+  },
+  "warning": "daily_shapes is built from net_load, the TARGET. cluster_same_day therefore encodes the answer's own shape and must never be used as a feature. It is exported so the leak can be reproduced, not used."
+}
