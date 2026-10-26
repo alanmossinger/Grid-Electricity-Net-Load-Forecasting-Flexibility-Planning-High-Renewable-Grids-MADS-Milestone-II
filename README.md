@@ -66,7 +66,7 @@ make figures      # report figures from data/processed/results.json
   after 4 hours; run it again with fewer workers: `make run FROM=04 NJOBS=4`. Results do not depend on it.
 - To pull fresh data, copy `.env.example` to `.env` and add a free EIA key (https://www.eia.gov/opendata/).
 
-## How the evaluation is kept honest
+## How the evaluation is kept 
 
 1. **One chronological holdout.** Everything after 2024-02-06 23:00 is held out and scored once; all tuning uses
    cross-validation on the earlier block with a gap of at least the forecast horizon.
