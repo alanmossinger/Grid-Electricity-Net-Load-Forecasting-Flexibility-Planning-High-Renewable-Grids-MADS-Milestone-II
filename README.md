@@ -21,10 +21,9 @@ only, and turns the forecast into a calibrated uncertainty band an operator coul
 A difference-in-differences and a propensity-matching design both point the same way on whether more solar
 causes steeper evening ramps, but neither can identify the size; the report says so rather than claim one.
 
-## Reports
+## Report
 
-- [`reports/Milestone_II_Final_Report.pdf`](reports/Milestone_II_Final_Report.pdf) — the report (about 20 pages).
-- [`reports/Full_Technical_Report.pdf`](reports/Full_Technical_Report.pdf) — the 28-page edition with every supporting figure.
+- [`reports/Milestone_II_Final_Report.pdf`](reports/Milestone_II_Final_Report.pdf) — the final report (19 pages).
 - The notebooks are the full record: every analysis, every figure (`reports/figures/`), and the text that reads it.
 
 ## Repository
